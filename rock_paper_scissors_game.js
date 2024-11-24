@@ -7,15 +7,15 @@ const compWin = decorateMessage("Ops! You Lost.🤞Better Luck Next Time.");
 const invalid = decorateMessage("❌ Invalid Choice.");
 
 function repeat(string, nTimes) {
-  if (nTimes <= 0) {
-    return "";
+  let repeatedString = "";
+  for (let index = 0; index < nTimes; index++) {
+    repeatedString += string;
   }
-
-  return string + repeat(string, nTimes - 1);
+  return repeatedString;
 }
 
 function decorateMessage(string) {
-  const line = repeat("―", string.length);
+  const line = repeat("─", string.length);
   return line + "\n" + string + "\n" + line;
 }
 
